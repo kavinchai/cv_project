@@ -8,177 +8,193 @@
   </head>
 
   <body>
-    <div id="topSection">
-      <img id="vtLogo" src="./assets/imgs/logo.png"/>
-      <div id="topSubsection">
-        <text id="title">Computer Vision Project</text>
-        <text id="authors">Xinrui Li, Asude Baykal, Kavin Chaisawangwong</text>
+    <div id="navContainer">
+      <div id="btnContainers">
+        <button type="button" class="btn" onclick=scrolls("abstract")>Abstract</button>
+        <button type="button" class="btn" onclick=scrolls("prevWorks")>Previous Works</button>
+        <button type="button" class="btn" onclick=scrolls("problemStatement")>Problem Statement</button>
+        <button type="button" class="btn" onclick=scrolls("approach")>Approach</button>
+        <button type="button" class="btn" onclick=scrolls("selection")>Selections</button>
+        <button type="button" class="btn" onclick=scrolls("dataset")>Dataset</button>
+        <button type="button" class="btn" onclick=scrolls("expRes")>Experiment & Results</button>
+        <button type="button" class="btn" onclick=scrolls("qualRes")>Qualitative Results</button>
+        <button type="button" class="btn" onclick=scrolls("conclusion")>Conclusion</button>
       </div>
     </div>
 
-    <div id="blank"></div>
-
-    <div class="alt" id="abstract">
-      <text class="header" id="abstractHeader">Abstract</text>
-      <text class="body" id="abstractBody">
-        Automated vehicle detection is extremely important for 
-        autonomous driving and road management tasks. Vehicle 
-        detection systems can reduce the accident rate further since 
-        humans may lose focus when driving and may have mis-operation 
-        during bad road conditions. For example, front collision warning 
-        and passive side impact protection can be developed if the cameras 
-        can detect the cars that are approaching. Driver’s pressure during 
-        long distance trips can be reduced by adaptive cruise control with 
-        a car following system. Even though there might be a long way to 
-        achieve fully automated vehicles, the amount of accidents caused 
-        by human error will be reduced by vehicle detection systems. 
-        Deep learning techniques in the computer vision field exceed the 
-        accuracy of traditional methods in vehicle detection due to the 
-        increased volume of data and computational power (Wang et al.)[1]. 
-        In this project, we will explore the two deep learning models and 
-        compare their performance against traditional methods.
-
-      </text>
-    </div>
-
-    <div id="blank"></div>
-
-    <div id="prevWorks">
-      <text class="header" id="prevWorksHeader">Previous Works</text>
-      <text class="body" id="prevWorksBody">
-        The Convolutional Neural Networks (CNNs) have great success in image 
-        classification and object detection. AlexNet received first place prize 
-        in the ImageNet competition in 2012 (Ali et al.)[2]. The Residual Networks 
-        (Resnet) was invented by Microsoft researchers and improved the performance 
-        of deep convolutional neural networks  (Ali et al.)[2]. Although Resnet was 
-        initially intended for image recognition, the framework can also have non-computer 
-        vision applications to achieve better accuracy. YOLO is a CNN based detection 
-        algorithm proposed by Joseph Redmon in 2015 (Lu et al.)[3]. Multiple car object 
-        detection using YOLO has been done in this paper (S. Rawat)[4]. Instead of 
-        choosing the region of interest and classifying using Convolution Neural Network, 
-        they classify all objects in a single run of algorithm by using YOLO which is much 
-        faster
-      </text>
-    </div>
-
-    <div id="blank"></div>
-
-    <div class="alt" id="problemStatement">
-      <text class="header" id="probStateIntro">Problem Statement</text>
-      <text class="body" id="probStateBody">
-        This project will provide a comparison of the results yielded by applying a 
-        traditional and two different deep learning methods to detecting vehicles in 
-        a static image. The methodology of each model will be categorically detailed along 
-        with the results produced by their respective application.
-      </text>
-    </div>
-
-    <div id="blank"></div>
-
-    <div id="approach">
-      <text class="header" id="apprIntro">Approach</text>
-      <text class="body" id="apprBody">
-        Three deep learning models will be implemented: traditional feature detectors using 
-        OpenCV, CNN (Simple CNN and ResNet50), and YOLOv4. These 3 models will be implemented 
-        using Keras and Tensorflow. The goal of these models is to predict the bounding box 
-        using the x-y coordinates and the class conditional probability. Our project will 
-        focus on vehicle detection using 2D images to improve detection accuracy. The details 
-        of each method is explained in the Experiments and Results section.
-      </text>
-    </div>
-
-    <div id="blank"></div>
-
-    <div class="alt" id="selection">
-      <text class="header" id="selectIntro">Selection of Models</text>
-      <text id="selectBody">
-        The architectures of the three models mentioned can be found below.
-      </text>
-      <ol id="selectList">
-        <li>OpenCV</li>
-        <text>
-          Instead of using machine learning models, traditional image processing techniques, 
-          like Canny Edge Detection, color thresholding and Harris Corner Detection, in 
-          OpenCV will be used to directly detect multiple car objects in one image.
-        </text>
-        <li>CNNs</li>
-          <ol type="a" id="subSelectList">
-            <li>Simple CNN</li>
-            <text>
-              A simple Convolutional Neural Network consists of multiple convolutional layers 
-              and pooling layers. A convolutional layer extracts the important features by 
-              applying a filter repeatedly on each pixel resulting in a feature map. An 
-              activation function such as ReLU will introduce non-linearity to the model. 
-              The following pooling layers will be used to downsample each feature map using 
-              averaging or selecting maximum value. 
-            </text>
-            <div class="imgs" id="simpleCnnSection">
-              <img class="img" src="./assets/imgs/simplecnn.png"/>
-            </div>
-            <li>ResNet50</li>
-            <text>
-              A ResNet50 model contains 5 stages, each with a convolution and identity block. 
-              Each respective convolution and identity block contains 3 additional convolution 
-              layers. Hence, by convention, this model is a neural network that has 50 layers. 
-              Skip connection distinguishes this model from its predecessors, where convolution 
-              layers are not only stacked, but the original input is also added to the output 
-              of the convolution block.
-            </text>
-            <div class="imgs" id="resnetSection">
-              <img class="img" src="./assets/imgs/resnet.png"/>
-            </div>
-          </ol>
-        <li>YoloV4</li>
-        <text>
-          YOLO v4 model contains CSPDarknet53 backbone for feature extraction, SPP additional 
-          module for separating significant context features, PANet path-aggregation neck for 
-          feature aggregation, and YOLOv3 head for locating bound boxes and performing 
-          classification. (A. Bochkovskiy et al.)[7]
-        </text>
-        <div class="imgs" id="yolov4">
-          <img class="img" src="./assets/imgs/yolo.png"/>
+    <div id="mainSection">
+      <div id="mainHeader">
+        <img id="vtLogo" src="./assets/imgs/logo.png"/>
+        <div id="mainSubheader">
+          <text id="title">Computer Vision Project</text>
+          <text id="authors">Xinrui Li, Asude Baykal, Kavin Chaisawangwong</text>
         </div>
-      </ol> 
-    </div>
-
-    <div id="blank"></div>
-
-    <div id="dataset">
-      <text class="header" id="datasetIntro">Dataset</text>
-      <text class="body" id="datasetBody">
-        The dataset that will be used for the various models is the “Udacity Annotated Driving 
-        Dataset” provided by Roboflow public archive. It includes driving in Mountain View 
-        California and neighboring cities during daylight conditions, containing over 65,000 
-        labels across 9,423 frames (Nelson)[9] and (Roboflow)[10].
-      </text>
-    </div>
-
-    <div id="blank"></div>
-
-    <div class="alt" id="expRes">
-      <text class="header" id="expResIntro">Experiments and Results</text>
-      <text class="body" id="expResBody"></text>
-    </div>
-    
-    <div id="blank"></div>
-
-    <div id="qualRes">
-      <text class="header" id="qualResIntro">Qualitative Results</text>
-      <text class="body" id="qualResIntro"></text>
-    </div>
-
-    <div id="blank"></div>
-    
-    <div class="alt" id="conclusion">
-      <text class="header" id="concIntro">Conclusion</text>
-      <text class="body" id="concBody"></text>
-    </div>
-
-    <div id="blank"></div>
-    
-    <div id="references">
-      <text class="header" id="refIntro">References</text>
-      <text class="body" id="refBody"></text>
+      </div>
+  
+      <div id="blank"></div>
+  
+      <div class="alt" id="abstract">
+        <text class="header" id="abstractHeader">Abstract</text>
+        <text class="body" id="abstractBody">
+          Automated vehicle detection is extremely important for 
+          autonomous driving and road management tasks. Vehicle 
+          detection systems can reduce the accident rate further since 
+          humans may lose focus when driving and may have mis-operation 
+          during bad road conditions. For example, front collision warning 
+          and passive side impact protection can be developed if the cameras 
+          can detect the cars that are approaching. Driver’s pressure during 
+          long distance trips can be reduced by adaptive cruise control with 
+          a car following system. Even though there might be a long way to 
+          achieve fully automated vehicles, the amount of accidents caused 
+          by human error will be reduced by vehicle detection systems. 
+          Deep learning techniques in the computer vision field exceed the 
+          accuracy of traditional methods in vehicle detection due to the 
+          increased volume of data and computational power (Wang et al.)[1]. 
+          In this project, we will explore the two deep learning models and 
+          compare their performance against traditional methods.
+  
+        </text>
+      </div>
+  
+      <div id="blank"></div>
+  
+      <div id="prevWorks">
+        <text class="header" id="prevWorksHeader">Previous Works</text>
+        <text class="body" id="prevWorksBody">
+          The Convolutional Neural Networks (CNNs) have great success in image 
+          classification and object detection. AlexNet received first place prize 
+          in the ImageNet competition in 2012 (Ali et al.)[2]. The Residual Networks 
+          (Resnet) was invented by Microsoft researchers and improved the performance 
+          of deep convolutional neural networks  (Ali et al.)[2]. Although Resnet was 
+          initially intended for image recognition, the framework can also have non-computer 
+          vision applications to achieve better accuracy. YOLO is a CNN based detection 
+          algorithm proposed by Joseph Redmon in 2015 (Lu et al.)[3]. Multiple car object 
+          detection using YOLO has been done in this paper (S. Rawat)[4]. Instead of 
+          choosing the region of interest and classifying using Convolution Neural Network, 
+          they classify all objects in a single run of algorithm by using YOLO which is much 
+          faster
+        </text>
+      </div>
+  
+      <div id="blank"></div>
+  
+      <div class="alt" id="problemStatement">
+        <text class="header" id="probStateIntro">Problem Statement</text>
+        <text class="body" id="probStateBody">
+          This project will provide a comparison of the results yielded by applying a 
+          traditional and two different deep learning methods to detecting vehicles in 
+          a static image. The methodology of each model will be categorically detailed along 
+          with the results produced by their respective application.
+        </text>
+      </div>
+  
+      <div id="blank"></div>
+  
+      <div id="approach">
+        <text class="header" id="apprIntro">Approach</text>
+        <text class="body" id="apprBody">
+          Three deep learning models will be implemented: traditional feature detectors using 
+          OpenCV, CNN (Simple CNN and ResNet50), and YOLOv4. These 3 models will be implemented 
+          using Keras and Tensorflow. The goal of these models is to predict the bounding box 
+          using the x-y coordinates and the class conditional probability. Our project will 
+          focus on vehicle detection using 2D images to improve detection accuracy. The details 
+          of each method is explained in the Experiments and Results section.
+        </text>
+      </div>
+  
+      <div id="blank"></div>
+  
+      <div class="alt" id="selection">
+        <text class="header" id="selectIntro">Selection of Models</text>
+        <text id="selectBody">
+          The architectures of the three models mentioned can be found below.
+        </text>
+        <ol id="selectList">
+          <li>OpenCV</li>
+          <text>
+            Instead of using machine learning models, traditional image processing techniques, 
+            like Canny Edge Detection, color thresholding and Harris Corner Detection, in 
+            OpenCV will be used to directly detect multiple car objects in one image.
+          </text>
+          <li>CNNs</li>
+            <ol type="a" id="subSelectList">
+              <li>Simple CNN</li>
+              <text>
+                A simple Convolutional Neural Network consists of multiple convolutional layers 
+                and pooling layers. A convolutional layer extracts the important features by 
+                applying a filter repeatedly on each pixel resulting in a feature map. An 
+                activation function such as ReLU will introduce non-linearity to the model. 
+                The following pooling layers will be used to downsample each feature map using 
+                averaging or selecting maximum value. 
+              </text>
+              <div class="imgContainer" id="simpleCnnSection">
+                <img class="img" src="./assets/imgs/simplecnn.png"/>
+              </div>
+              <li>ResNet50</li>
+              <text>
+                A ResNet50 model contains 5 stages, each with a convolution and identity block. 
+                Each respective convolution and identity block contains 3 additional convolution 
+                layers. Hence, by convention, this model is a neural network that has 50 layers. 
+                Skip connection distinguishes this model from its predecessors, where convolution 
+                layers are not only stacked, but the original input is also added to the output 
+                of the convolution block.
+              </text>
+              <div class="imgContainer" id="resnetSection">
+                <img class="img" src="./assets/imgs/resnet.png"/>
+              </div>
+            </ol>
+          <li>YoloV4</li>
+          <text>
+            YOLO v4 model contains CSPDarknet53 backbone for feature extraction, SPP additional 
+            module for separating significant context features, PANet path-aggregation neck for 
+            feature aggregation, and YOLOv3 head for locating bound boxes and performing 
+            classification. (A. Bochkovskiy et al.)[7]
+          </text>
+          <div class="imgContainer" id="yolov4">
+            <img class="img" src="./assets/imgs/yolo.png"/>
+          </div>
+        </ol> 
+      </div>
+  
+      <div id="blank"></div>
+  
+      <div id="dataset">
+        <text class="header" id="datasetIntro">Dataset</text>
+        <text class="body" id="datasetBody">
+          The dataset that will be used for the various models is the “Udacity Annotated Driving 
+          Dataset” provided by Roboflow public archive. It includes driving in Mountain View 
+          California and neighboring cities during daylight conditions, containing over 65,000 
+          labels across 9,423 frames (Nelson)[9] and (Roboflow)[10].
+        </text>
+      </div>
+  
+      <div id="blank"></div>
+  
+      <div class="alt" id="expRes">
+        <text class="header" id="expResIntro">Experiments and Results</text>
+        <text class="body" id="expResBody"></text>
+      </div>
+      
+      <div id="blank"></div>
+  
+      <div id="qualRes">
+        <text class="header" id="qualResIntro">Qualitative Results</text>
+        <text class="body" id="qualResIntro"></text>
+      </div>
+  
+      <div id="blank"></div>
+      
+      <div class="alt" id="conclusion">
+        <text class="header" id="concIntro">Conclusion</text>
+        <text class="body" id="concBody"></text>
+      </div>
+  
+      <div id="blank"></div>
+      
+      <div id="references">
+        <text class="header" id="refIntro">References</text>
+        <text class="body" id="refBody"></text>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
