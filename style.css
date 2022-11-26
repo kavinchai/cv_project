@@ -37,6 +37,7 @@ body {
 #mainHeader {
   font: "Times New Roman";
   display: flex;
+  margin: 10px 0;
 }
 
 #mainSubheader {
@@ -74,10 +75,6 @@ body {
 
 .img {
   width: 50%;
-}
-
-.img:hover {
-  transform: scale(1.05);
 }
 
 #abstract {
