@@ -38,7 +38,6 @@
             As self-driving vehicles or automotive driver assistance have become more widespread in real life, it is important to develop intelligent vehicle detection systems that will improve road safety and driving performance. However, vehicle detection systems encounter many challenges due to the number of vehicles in a traffic, different sized vehicles, and other environmental factors such as air clarity, weather conditions. Therefore, it is important to implement an automated vehicle detection system that can accurately locate a vehicle, and predict its coordinates. This paper implements and compares three methods of car detection using supervised learning with 2D images and their annotations.
           </text>
         </div>
-
       </div>
   
       <div id="intro">
@@ -48,7 +47,6 @@
             Vehicle detection systems using computer vision has been popular during the recent years. These systems can be used for road assistance for drivers and self-driving vehicles. According to vehicle accident statistics, one of the main threats is the other cars on the road [Zeehang]. It is important to develop vehicle detection systems to mitigate the road dangers through automotive vehicle assistance, but also improve the performance of self-driving vehicles. Unfortunately, understanding the traffic scene as accurately and fast as possible is a hard task due to the complex traffic conditions and air clarity. In this paper, we will be analyzing computer vision-based vehicle detection algorithms that use 2D images from the view of the camera mounted on the vehicle.
           </text>
         </div>
-
       </div>
   
       <div class="alt" id="problemStatement">
@@ -82,15 +80,15 @@
         </div>
 
         <ol id="selectList">
-          <li>OpenCV</li>
+          <li class="models">OpenCV</li>
           <text>
             Instead of using machine learning models, traditional image processing techniques, 
             like Canny Edge Detection, color thresholding and Harris Corner Detection, in 
             OpenCV will be used to directly detect multiple car objects in one image.
           </text>
-          <li>CNNs</li>
+          <li class="models">CNNs</li>
             <ol type="a" id="subSelectList">
-              <li>Simple CNN</li>
+              <li class="models">Simple CNN</li>
               <text>
                 A simple Convolutional Neural Network consists of multiple convolutional layers 
                 and pooling layers. A convolutional layer extracts the important features by 
@@ -102,12 +100,10 @@
               <div class="imgContainer" id="simpleCnnSection">
                 <img class="img" src="./assets/imgs/simplecnn.png"/>
                 <div class="imgSub">
-                  <text>
-                    Figure 1: Simple CNN Architecture
-                  </text>
+                  <text>Figure 1: Simple CNN Architecture</text>
                 </div>
               </div>
-              <li>ResNet50</li>
+              <li class="models">ResNet50</li>
               <text>
                 A ResNet50 model contains 5 stages, each with a convolution and identity block. 
                 Each respective convolution and identity block contains 3 additional convolution 
@@ -119,13 +115,11 @@
               <div class="imgContainer" id="resnetSection">
                 <img class="img" src="./assets/imgs/resnet.png"/>
                 <div class="imgSub">
-                  <text>
-                    Figure 2: ResNet50 Architecture
-                  </text>
+                  <text>Figure 2: ResNet50 Architecture</text>
                 </div>
               </div>
             </ol>
-          <li>YoloV4</li>
+          <li class="models">YoloV4</li>
           <text>
             YOLO V4 model contains CSPDarknet53 backbone for feature extraction, SPP additional 
             module for separating significant context features, PANet path-aggregation neck for 
@@ -135,9 +129,7 @@
           <div class="imgContainer" id="yolov4">
             <img class="img" src="./assets/imgs/yolo.png"/>
             <div class="imgSub">
-              <text>
-                Figure 3: YOLOV4 Architecture
-              </text>
+              <text>Figure 3: YOLOV4 Architecture</text>
             </div>
           </div>
         </ol> 
@@ -197,9 +189,7 @@
             <div class="imgContainer" id="openCvImg">
               <img class="img" src="./assets/imgs/openCV1.png"/>
               <div class="imgSub">
-                <text>
-                  Figure 4: OpenCV Image Detection Output
-                </text>
+                <text>Figure 4: OpenCV Image Detection Output</text>
               </div>
             </div>
           </div>
@@ -219,9 +209,7 @@
             <div class="imgContainer" id="resnetimg">
               <img class="img" src="./assets/imgs/resnet1.png"/>
               <div class="imgSub">
-                <text>
-                  Figure 5: ResNet50 Model
-                </text>
+                <text>Figure 5: ResNet50 Model</text>
               </div>
             </div>
           </div>
@@ -237,9 +225,7 @@
             <div class="imgContainer" id="resnetimg">
               <img class="img" src="./assets/imgs/resnet2.png"/>
               <div class="imgSub">
-                <text>
-                  Figure 6: ResNet50 Image Detection Output
-                </text>
+                <text>Figure 6: ResNet50 Image Detection Output</text>
               </div>
             </div>
           </div>
@@ -271,7 +257,26 @@
       
       <div id="references">
         <text class="header" id="refIntro">References</text>
-        <text class="body" id="refBody"></text>
+        <ol class="refOL">
+          <li class="refLI">
+            “CV::Cascadeclassifier class reference,” OpenCV. [Online]. Available: https://docs.opencv.org/3.4/d1/de5/classcv_1_1CascadeClassifier.html. [Accessed: 23-Nov-2022]. 
+          </li>
+          <li class="refLI">
+            262588213843476, “Cars.xml,” Gist. [Online]. Available: https://gist.github.com/199995/37e1e0af2bf8965e8058a9dfa3285bc6. [Accessed: 23-Nov-2022]. 
+          </li>
+          <li class="refLI">
+            Roboflow, “Udacity Self Driving Car Object Detection Dataset - fixed-small”, https://public.roboflow.com/object-detection/self-driving-car/3/download  
+          </li>
+          <li class="refLI">
+            “FASTERRCNN_RESNET50_FPN¶,” fasterrcnn_resnet50_fpn - Torchvision 0.14 documentation. [Online]. Available: https://pytorch.org/vision/stable/models/generated/torchvision.models.detection.fasterrcnn_resnet50_fpn.html. [Accessed: 23-Nov-2022]. 
+          </li>
+          <li class="refLI">
+            I. Lee, D. Kim, D. Wee, and S. Lee, “An efficient human instance-guided framework for Video action recognition,” Sensors, vol. 21, no. 24, p. 8309, 2021. 
+          </li>
+          <li class="refLI">
+            Zehang Sun, G. Bebis and R. Miller, "On-road vehicle detection: a review," in IEEE Transactions on Pattern Analysis and Machine Intelligence, vol. 28, no. 5, pp. 694-711, May 2006, doi: 10.1109/TPAMI.2006.104.
+          </li>
+        </ol>
       </div>
     </div>
     <script src="script.js"></script>

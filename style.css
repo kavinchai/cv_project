@@ -1,3 +1,11 @@
+h3 {
+  padding: 0px 0px 0px 20px;
+}
+
+li {
+  padding: 5px 0px;
+}
+
 #navContainer {
   height: 6%;
   width: 100vw;
@@ -20,10 +28,10 @@
 
 #mainSection {
   margin-top: 3%;
+  font: "Times New Roman";
 }
 
 #mainHeader {
-  font: "Times New Roman";
   display: flex;
   margin: 10px 0;
 }
@@ -55,19 +63,23 @@
   flex-direction: column;
 }
 
-.imgContainer {
-  width: 100%;
-  text-align: center;
-  padding: 20px 0px 0px 0px;
-  justify-content: center;
+.models {
+  font-weight: bold;
+}
+
+.img {
+  width: 50%;
 }
 
 .imgSub {
   width: 100%;
 }
 
-.img {
-  width: 50%;
+.imgContainer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0px 0px 0px;
+  justify-content: center;
 }
 
 .iouEq {
@@ -91,15 +103,6 @@
   padding: 0px 20px 20px 20px;
 }
 
-h3 {
-  padding: 0px 0px 0px 20px;
-}
-
-li {
-  padding: 5px 0px;
-  font-weight: bold;
-}
-
 .btn {
   background-color: transparent;
   background-repeat: no-repeat;
@@ -116,4 +119,14 @@ li {
 .btn:hover {
   color: rgb(165, 120, 36);
   transform: scale(1.05);
+}
+
+.refOL {
+  list-style-type: none;
+}
+.refLI:before {
+  content: "[" counter(section, list) "] ";
+}
+.refLI {
+  counter-increment: section;
 }
