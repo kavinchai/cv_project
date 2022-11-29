@@ -14,8 +14,6 @@
         <button class="btn" onclick="scrolls('problemStatement')">Problem Statement</button>
         <button class="btn" onclick="scrolls('approach')">Approach</button>
         <button class="btn" onclick="scrolls('intro')">Introduction</button>
-        <button class="btn" onclick="scrolls('selection')">Selections</button>
-        <button class="btn" onclick="scrolls('dataset')">Dataset</button>
         <button class="btn" onclick="scrolls('expRes')">Experiment & Results</button>
         <button class="btn" onclick="scrolls('qualRes')">Qualitative Results</button>
         <button class="btn" onclick="scrolls('conclusion')">Conclusion</button>
@@ -93,82 +91,6 @@
         <div class="body">
           <text id="apprBody3">
             All three methods were evaluated using the test dataset. The accuracy of the predictions and the average IoU metrics were used to evaluate and compare each model to decide which model is best fit for this vehicle detection.  
-          </text>
-        </div>
-      </div>
-  
-      <div class="alt" id="selection">
-        <text class="header" id="selectIntro">Selection of Models</text>
-        <div class="body">
-          <text id="selectBody">
-            The architectures of the three models mentioned can be found below.
-          </text>
-        </div>
-
-        <ol id="selectList">
-          <li class="models">OpenCV</li>
-          <text>
-            Instead of using machine learning models, traditional image processing techniques, 
-            like Canny Edge Detection, color thresholding and Harris Corner Detection, in 
-            OpenCV will be used to directly detect multiple car objects in one image.
-          </text>
-          <li class="models">CNNs</li>
-            <ol type="a" id="subSelectList">
-              <li class="models">Simple CNN</li>
-              <text>
-                A simple Convolutional Neural Network consists of multiple convolutional layers 
-                and pooling layers. A convolutional layer extracts the important features by 
-                applying a filter repeatedly on each pixel resulting in a feature map. An 
-                activation function such as ReLU will introduce non-linearity to the model. 
-                The following pooling layers will be used to downsample each feature map using 
-                averaging or selecting maximum value. 
-              </text>
-              <div class="imgContainer" id="simpleCnnSection">
-                <img class="img" src="./assets/imgs/simplecnn.png"/>
-                <div class="imgSub">
-                  <text>Figure 2: Simple CNN Architecture</text>
-                </div>
-              </div>
-              <li class="models">ResNet50</li>
-              <text>
-                A ResNet50 model contains 5 stages, each with a convolution and identity block. 
-                Each respective convolution and identity block contains 3 additional convolution 
-                layers. Hence, by convention, this model is a neural network that has 50 layers. 
-                Skip connection distinguishes this model from its predecessors, where convolution 
-                layers are not only stacked, but the original input is also added to the output 
-                of the convolution block.
-              </text>
-              <div class="imgContainer" id="resnetSection">
-                <img class="img" src="./assets/imgs/resnet.png"/>
-                <div class="imgSub">
-                  <text>Figure 3: ResNet50 Architecture</text>
-                </div>
-              </div>
-            </ol>
-          <li class="models">YoloV4</li>
-          <text>
-            YOLO V4 model contains CSPDarknet53 backbone for feature extraction, SPP additional 
-            module for separating significant context features, PANet path-aggregation neck for 
-            feature aggregation, and YOLOv3 head for locating bound boxes and performing 
-            classification. (A. Bochkovskiy et al.)[7]
-          </text>
-          <div class="imgContainer" id="yolov4">
-            <img class="img" src="./assets/imgs/yolov4architecture.png"/>
-            <div class="imgSub">
-              <text>Figure 4: YOLOV4 Architecture</text>
-            </div>
-          </div>
-        </ol> 
-      </div>
-  
-      <div id="dataset">
-        <text class="header" id="datasetIntro">Dataset</text>
-        <div class="body">
-          <text id="datasetBody">
-            The dataset that will be used for the various models is the “Udacity Annotated Driving 
-            Dataset” provided by Roboflow public archive. It includes driving in Mountain View 
-            California and neighboring cities during daylight conditions, containing over 65,000 
-            labels across 9,423 frames (Nelson)[9] and (Roboflow)[10].
           </text>
         </div>
       </div>
