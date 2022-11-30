@@ -41,7 +41,7 @@ li {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  margin-left: 26%;
+  margin-left: 21%;
 }
 
 #title {
@@ -96,7 +96,7 @@ li {
   width: 35%;
 }
 
-.yoloparam {
+.table {
   width: 25%;
 }
 
